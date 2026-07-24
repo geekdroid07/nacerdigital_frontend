@@ -29,6 +29,7 @@ export default function Home() {
   const fetchProfile = async (value: string) => {
     setLoading(true);
     setError(null);
+    
     try {
       const response = await axios.get<GitHubProfile>(`${backendUrl}/user/${value}`);
       setProfile(response.data);
